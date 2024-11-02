@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Pemimpin dan Karyawan Universitas Pamulang</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <!-- Logo -->
+                <div class="logo-container text-center">
+                    <div class="d-flex align-items-center justify-content-center mb-5">
+                        <img src="img/logo.png" width="50" height="50" class="img-fluid" alt="">
+                        <h6><span style="margin-right: 6px;">UNIVERSITAS</span>PAMULANG</h6>
+                        <div class="logo-text">
+                    </div>
+                </div>
+                <!-- Profile -->
+                <div class="profile text-center">
+                    <img src="img/pengguna.png" width="50" height="50" class="img-fluid" alt="">
+                    <h5 class="mt-3 text-white">Muhammad Fahmi Hidayatullah</h5>
+                </div>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="index.html">
+                        <i class="bi bi-house-door"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="karyawan.html">
+                        <i class="bi bi-people"></i>
+                        Data Pengurus
+                    </a>
+                </li>
+                <li>
+                    <a href="jabatan.html">
+                        <i class="bi bi-briefcase"></i>
+                        Data Jabatan
+                    </a>
+                </li>
+                <li>
+                    <a href="divisi.html">
+                        <i class="bi bi-diagram-3"></i>
+                        Data Divisi
+                    </a>
+                </li>
+                <li>
+                    <a href="absensi.html">
+                        <i class="bi bi-calendar-check"></i>
+                        Absensi
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Content -->
+        <div id="content">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="bi bi-list"></i>
+                    </button>
+                    <div class="d-flex align-items-center">
+                        <span class="me-3">Data Karyawan</span>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <div class="container-fluid">
+                <div class="card mt-4">
+                    <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Data Karyawan</h5>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addKaryawan">
+                            <i class="bi bi-plus"></i> Tambah Karyawan
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <!-- Search and Filter -->
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Cari karyawan...">
+                            </div>
+                            <div class="col-md-3">
+                                <select class="form-select">
+                                    <option value="">Semua Divisi</option>
+                                    <option>IT</option>
+                                    <option>HR</option>
+                                    <option>Finance</option>
+                                    <option>Marketing</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- Table -->
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>NIP</th>
+                                        <th>Nama</th>
+                                        <th>Jabatan</th>
+                                        <th>Divisi</th>
+                                        <th>Email</th>
+                                        <th>Status</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>001</td>
+                                        <td>Dr. H. E. Nurzaman, M.M., M.Si.</td>
+                                        <td>Rektor</td>
+                                        <td>Rektor</td>
+                                        <td>rektor@gmail.com</td>
+                                        <td><span class="badge bg-success">Aktif</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-warning">
+                                                <i class="bi bi-pencil"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-danger">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <!-- Tambahkan data karyawan lainnya -->
+                                    <td>002</td>
+                                    <td>Dr. Muhammad Wildan, S.S., M.A.,</td>
+                                    <td>Wakil Rektor</td>
+                                    <td>Wakil Rektor</td>
+                                    <td>warek@gmail.com</td>
+                                    <td><span class="badge bg-success">Aktif</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-warning">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-danger">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                    <!-- Tambahkan data karyawan lainnya -->
+                                    <td>003</td>
+                                    <td>Yan Miha Djaksana, S.Kom. M.Kom</td>
+                                    <td>Dekan Filkom</td>
+                                    <td>Dekan</td>
+                                    <td>dekan@gmail.com</td>
+                                    <td><span class="badge bg-success">Aktif</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-warning">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-danger">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                    <!-- Tambahkan data karyawan lainnya -->
+                                    <td>004</td>
+                                    <td>Dr. Ahmad Musyafa, S.kom., M.Kom</td>
+                                    <td>Kaprodi</td>
+                                    <td>Kaprodi</td>
+                                    <td>kaprodi@gmail.com</td>
+                                    <td><span class="badge bg-success">Aktif</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-warning">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-danger">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                    <!-- Tambahkan data karyawan lainnya -->
+                                    <td>005</td>
+                                    <td>Joko Riyanto, S.Kom., M.Kom.</td>
+                                    <td>Wakaprodi</td>
+                                    <td>Wakaprodi</td>
+                                    <td>wakaprodi@gmail.com</td>
+                                    <td><span class="badge bg-success">Aktif</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-warning">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-danger">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                    <!-- Tambahkan data karyawan lainnya -->
+                                    <td>006</td>
+                                    <td>Budi Santoso, S.Kom, M.Kom</td>
+                                    <td>Umum</td>
+                                    <td>Kepala Divisi</td>
+                                    <td>budi.s@gmail.com</td>
+                                    <td><span class="badge bg-success">Aktif</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-warning">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-danger">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                    <!-- Tambahkan data karyawan lainnya -->
+                                    <td>007</td>
+                                    <td>Andre, S.Pd, M.Pd</td>
+                                    <td>Umum</td>
+                                    <td>Staff</td>
+                                    <td>andre@gmail.com</td>
+                                    <td><span class="badge bg-success">Aktif</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-warning">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-danger">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                    <!-- Tambahkan data karyawan lainnya -->
+                                    <td>008</td>
+                                    <td>Jaka, S.Kom, M.Kom</td>
+                                    <td>Umum</td>
+                                    <td>Staff</td>
+                                    <td>jaka@gmail.com</td>
+                                    <td><span class="badge bg-success">Aktif</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-warning">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-danger">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                    <!-- Tambahkan data karyawan lainnya -->
+                                    <td>009</td>
+                                    <td>Fajri, S.Pd, M.Pd</td>
+                                    <td>Umum</td>
+                                    <td>Staff</td>
+                                    <td>fajri@gmail.com</td>
+                                    <td><span class="badge bg-success">Aktif</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-warning">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-danger">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                    <!-- Tambahkan data karyawan lainnya -->
+                                    <td>010</td>
+                                    <td>Agus Septian, S.Kom, M.Kom</td>
+                                    <td>IT</td>
+                                    <td>Kepala Divisi</td>
+                                    <td>agus.s@gmail.com</td>
+                                    <td><span class="badge bg-success">Aktif</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-warning">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-danger">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                    <!-- Tambahkan data karyawan lainnya -->
+                                    <td>011</td>
+                                    <td>Fauzi, S.Kom, M.Kom</td>
+                                    <td>IT</td>
+                                    <td>Staff</td>
+                                    <td>fauzi@gmail.com</td>
+                                    <td><span class="badge bg-success">Aktif</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-warning">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-danger">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                    <!-- Tambahkan data karyawan lainnya -->
+                                    <td>012</td>
+                                    <td>Indra, S.Kom, M.Kom</td>
+                                    <td>IT</td>
+                                    <td>Staff</td>
+                                    <td>indra@gmail.com</td>
+                                    <td><span class="badge bg-success">Aktif</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-warning">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-danger">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                    <!-- Tambahkan data karyawan lainnya -->
+                                    <td>013</td>
+                                    <td>Permana, S.Kom, M.Kom</td>
+                                    <td>IT</td>
+                                    <td>Staff</td>
+                                    <td>permana@gmail.com</td>
+                                    <td><span class="badge bg-success">Aktif</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-warning">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-danger">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                    <!-- Tambahkan data karyawan lainnya -->
+                                    <td>014</td>
+                                    <td>Yunita, S.Kom, M.Kom</td>
+                                    <td>IT</td>
+                                    <td>Staff</td>
+                                    <td>yunita@gmail.com</td>
+                                    <td><span class="badge bg-success">Aktif</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-warning">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-danger">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                    <!-- Tambahkan data karyawan lainnya -->
+                                    <td>015</td>
+                                    <td>Prakoso</td>
+                                    <td>Security</td>
+                                    <td>Kepala Divisi</td>
+                                    <td>prakoso@gmail.com</td>
+                                    <td><span class="badge bg-success">Aktif</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-warning">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-danger">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                    <!-- Tambahkan data karyawan lainnya -->
+                                    <td>016</td>
+                                    <td>Raja Julian</td>
+                                    <td>Security</td>
+                                    <td>Staff</td>
+                                    <td>raja.j@gmail.com</td>
+                                    <td><span class="badge bg-success">Aktif</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-warning">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-danger">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                    <!-- Tambahkan data karyawan lainnya -->
+                                    <td>017</td>
+                                    <td>Asep Sentoso</td>
+                                    <td>Cleaning Service</td>
+                                    <td>Kepala Divisi</td>
+                                    <td>asep.s@gmail.com</td>
+                                    <td><span class="badge bg-success">Aktif</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-warning">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-danger">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                    <!-- Tambahkan data karyawan lainnya -->
+                                    <td>018</td>
+                                    <td>Cepot</td>
+                                    <td>Cleaning Service</td>
+                                    <td>Staff</td>
+                                    <td>cepot@gmail.com</td>
+                                    <td><span class="badge bg-success">Aktif</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-warning">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-danger">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                    <!-- Tambahkan data karyawan lainnya -->
+                                    <td>019</td>
+                                    <td>Bambang</td>
+                                    <td>OB</td>
+                                    <td>Kepala Divisi</td>
+                                    <td>bambang@gmail.com</td>
+                                    <td><span class="badge bg-success">Aktif</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-warning">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-danger">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                    <!-- Tambahkan data karyawan lainnya -->
+                                    <td>020</td>
+                                    <td>Anto</td>
+                                    <td>OB</td>
+                                    <td>Staff</td>
+                                    <td>anto@gmail.com</td>
+                                    <td><span class="badge bg-success">Aktif</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-warning">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-danger">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </li>
+                        </ul>
+                    </nav>
+
+    <!-- Modal Tambah Karyawan -->
+    <div class="modal fade" id="addKaryawan" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Tambah Karyawan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">NIP</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Nama Lengkap</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Jabatan</label>
+                            <select class="form-select" required>
+                                <option value="">Pilih Jabatan</option>
+                                <option>Direktur</option>
+                                <option>Manager</option>
+                                <option>Staff</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Divisi</label>
+                            <select class="form-select" required>
+                                <option value="">Pilih Divisi</option>
+                                <option>IT</option>
+                                <option>HR</option>
+                                <option>Finance</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
